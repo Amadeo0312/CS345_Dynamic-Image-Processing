@@ -52,11 +52,20 @@
     <Compile Include="Forms\ImageProcessor.Designer.cs">
       <DependentUpon>ImageProcessor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SubtractionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubtractionForm.Designer.cs">
+      <DependentUpon>SubtractionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Libraries\DIPLibrary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ImageProcessor.resx">
       <DependentUpon>ImageProcessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubtractionForm.resx">
+      <DependentUpon>SubtractionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

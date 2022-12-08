@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using ImageProcessor;
 using IS_Dynamic_Image_Processing.Libraries;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -80,6 +81,12 @@ namespace IS_Dynamic_Image_Processing
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void subtraction_Click(object sender, EventArgs e)
+        {
+            SubtractionForm form2 = new SubtractionForm();
+            form2.ShowDialog();
         }
 
         private void SaveFileDialog_FileOk(object sender, CancelEventArgs e)

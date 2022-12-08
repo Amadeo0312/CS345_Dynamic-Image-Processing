@@ -75,21 +75,21 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // loadedImage
@@ -114,6 +114,7 @@
             // 
             // basicCopy
             // 
+            this.basicCopy.Enabled = false;
             this.basicCopy.Location = new System.Drawing.Point(685, 120);
             this.basicCopy.Name = "basicCopy";
             this.basicCopy.Size = new System.Drawing.Size(119, 23);
@@ -124,6 +125,7 @@
             // 
             // greyScale
             // 
+            this.greyScale.Enabled = false;
             this.greyScale.Location = new System.Drawing.Point(685, 149);
             this.greyScale.Name = "greyScale";
             this.greyScale.Size = new System.Drawing.Size(119, 24);
@@ -134,6 +136,7 @@
             // 
             // colorInversion
             // 
+            this.colorInversion.Enabled = false;
             this.colorInversion.Location = new System.Drawing.Point(685, 179);
             this.colorInversion.Name = "colorInversion";
             this.colorInversion.Size = new System.Drawing.Size(119, 24);
@@ -144,6 +147,7 @@
             // 
             // sepia
             // 
+            this.sepia.Enabled = false;
             this.sepia.Location = new System.Drawing.Point(685, 209);
             this.sepia.Name = "sepia";
             this.sepia.Size = new System.Drawing.Size(119, 24);
@@ -154,6 +158,7 @@
             // 
             // histogram
             // 
+            this.histogram.Enabled = false;
             this.histogram.Location = new System.Drawing.Point(685, 239);
             this.histogram.Name = "histogram";
             this.histogram.Size = new System.Drawing.Size(119, 24);
@@ -170,6 +175,7 @@
             this.subtraction.TabIndex = 8;
             this.subtraction.Text = "Subtraction";
             this.subtraction.UseVisualStyleBackColor = true;
+            this.subtraction.Click += new System.EventHandler(this.subtraction_Click);
             // 
             // textBox1
             // 
