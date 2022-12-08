@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using IS_Dynamic_Image_Processing.Libraries;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace IS_Dynamic_Image_Processing
 {
@@ -26,11 +27,23 @@ namespace IS_Dynamic_Image_Processing
             openFileDialog.ShowDialog();
         }
 
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog.Filter = "Bitmap Image|*.bmp";
+            saveFileDialog.Title = "Save an Image File";
+            saveFileDialog.ShowDialog();
+        }
+
         private void OpenFileDialog_FileOk(object sender, CancelEventArgs e)
         {
             loaded = new Bitmap(openFileDialog.FileName);
             loadedImage.Image = loaded;
 
+            basicCopy.Enabled = true;
+            greyScale.Enabled = true;
+            colorInversion.Enabled = true;
+            sepia.Enabled = true;
+            histogram.Enabled = true;
             saveToolStripMenuItem.Enabled = true;
         }
 
@@ -64,9 +77,15 @@ namespace IS_Dynamic_Image_Processing
             processedImage.Image = processed;
         }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void SaveFileDialog_FileOk(object sender, CancelEventArgs e)
         {
             processedImage.Image.Save(saveFileDialog.FileName);
         }
     }
 }
+
