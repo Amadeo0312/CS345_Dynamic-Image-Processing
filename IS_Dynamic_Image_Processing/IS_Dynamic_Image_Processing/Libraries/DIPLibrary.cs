@@ -156,7 +156,7 @@ namespace IS_Dynamic_Image_Processing.Libraries
                 }
             }
 
-            // Plot points based from histogramData
+            // Plot points 
             for (int i = 0; i < 256; i++)
             {
                 for (int j = 0; j < Math.Min(histogramData[i] / 5, processed.Height - 1); j++)
@@ -166,7 +166,13 @@ namespace IS_Dynamic_Image_Processing.Libraries
             }
         }
 
-
+        /// <summary>
+        /// This method will let you subtract the green in the loaded image and set it to
+        /// the loaded background and output the result as processed imaged
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="background"></param>
+        /// <param name="processed"></param>
         public static void Subtraction(ref Bitmap image, ref Bitmap background, ref Bitmap processed)
         {
             processed = new Bitmap(image.Width, image.Height);
@@ -179,21 +185,19 @@ namespace IS_Dynamic_Image_Processing.Libraries
             {
                 for (int j = 0; j < image.Height; j++)
                 {
-                    Color pixel = image.GetPixel(i, j);
-                    Color backPixel = background.GetPixel(i, j);
+                    Color imagePixel = image.GetPixel(i, j);
+                    Color backgroundPixel = background.GetPixel(i, j);
 
-                    // Calculate formula for sepia
-                    int grey = (pixel.R + pixel.G + pixel.B) / 3;
+                    int grey = (imagePixel.R + imagePixel.G + imagePixel.B) / 3;
                     int subtractValue = Math.Abs(grey - greyGreen);
 
-                    // Check conditions & Set pixel to the calculated one
                     if (subtractValue > threshold)
                     {
-                        processed.SetPixel(i, j, pixel);
+                        processed.SetPixel(i, j, imagePixel);
                     }
                     else
                     {
-                        processed.SetPixel(i, j, backPixel);
+                        processed.SetPixel(i, j, backgroundPixel);
                     }
                 }
             }
